@@ -1,0 +1,202 @@
+//верстка главной страницы
+//header сайта, входит в index.pug, cat.pug
+html
+    head
+        meta(charset='utf-8')
+        meta(
+          name='viewport'
+          content='width=device-width, initial-scale=1.0'
+        )
+        meta(
+          http-equiv='X-UA-Compatible'
+          content="ie=edge"
+        )
+        link(
+          rel='stylesheet'
+          href='/css/mustard-ui.min.css'
+        )
+        link(
+          rel="stylesheet" 
+          href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+          crossorigin="anonymous"
+        )
+        link(
+          rel='stylesheet'
+          href='/css/style.css'
+        )
+        link(
+          href="/css/slider.css" type="text/css" rel="stylesheet"
+        )
+        link(rel="stylesheet" 
+          href="/css/font-awesome.css"
+        )
+
+
+        title Вася Пупкин & Ко
+    body
+
+//верстка главной страницы
+
+
+//верстка слайдера
+div(class="slider")
+    div(class="slider__wrapper")
+        div(class="slider__items")
+            
+            div(class="slider__item")
+                
+                div(class='s2')
+                    //img(src="/images/"+goods[0]['image']) 
+                    img(src="/images/sl1.jpg")
+                    div(class="top-left")
+                      h4 Top Left
+                    div(class="centered")
+                      a(href='http://localhost:3000/cat?id=1')
+                        h2 Ноутбуки
+                    div(class="bottom-left")
+                      h4 Bottom Left
+                    
+                    div(class="center-right")
+                      img(src="/images/64306312_images_9249871008.jpg")
+
+
+
+
+
+            div(class="slider__item")
+                
+                div(class='s2')
+                    //img(src="/images/"+goods[1]['image'])  
+                    img(src="/images/sl2.jpg")
+                    div(class="bottom-left")
+                      h4 Bottom Left
+                    div(class="top-left")
+                      h4 Top Left
+                    div(class="centered")
+                      a(href='http://localhost:3000/cat?id=2')
+                        h2 Телефоны
+                    div(class="center-right")    
+                      img(src="/images/samsung_galaxy_s10_6_128_gb_black_sm_g973fzkdsek_images_11052552609.jpg")
+
+
+
+            div(class="slider__item")
+                
+                div(class='s2')
+                    //img(src="/images/"+goods[0]['image']) 
+                    img(src="/images/sl7.jpg")
+                    div(class="bottom-left")
+                      h4 Bottom Left
+                    div(class="top-left")
+                      h4 Top Left
+                    div(class="centered")
+                      a(href='http://localhost:3000/cat?id=1')
+                        h2 Ноутбуки
+                    div(class="center-right")    
+                      img(src="/images/64306312_images_9249871008.jpg")
+
+
+            div(class="slider__item")
+                
+                div(class='s2')
+                    //img(src="/images/"+goods[1]['image'])  
+                    img(src="/images/sl8.jpg")
+                    div(class="bottom-left")
+                      h4 Bottom Left
+                    div(class="top-left")
+                      h4 Top Left
+                    div(class="centered")
+                      a(href='http://localhost:3000/cat?id=2')
+                        h2 Телефоны
+                    div(class="center-right")    
+                      img(src="/images/samsung_galaxy_s10_6_128_gb_black_sm_g973fzkdsek_images_11052552609.jpg")
+
+                                               
+        
+    a(class="slider__control slider__control_prev" href="#" role="button")
+    a(class="slider__control slider__control_next" href="#" role="button")
+
+
+
+header(class='site-header-header')
+  div(class='container')
+  div(class='rowHead')
+    
+    div(class='col2')
+      a(href='/')
+         h1 Вася Пупкин & Ко
+
+    
+    div(class='col2')
+      button(id="category" class='show-nav') <h2><i class="fa fa-list">Каталог</i></h2>
+    //  h2 <i onclick="myFunction(this)" class="fa fa-list">Каталог</i>
+
+  
+    
+    div(class='col4') 
+      div(class='search')
+        input(
+              type='text', 
+              id='foundField',
+              placeholder='Поиск товара по названию',
+              )
+        div(class='buttonSearch')     
+          button(id='cleanBtn' class='show-nav') 
+            <i class="fa fa-close"></i>   
+          button(id='foundBtn' class='show-nav') 
+            <i class="fa fa-search"></i>
+    
+
+    div(class='col2')
+      a(href='/')    
+        button(id="phone") <h2><i class="fa fa-address-card"></i>Контакты</h2>        
+
+
+
+    div(class='col8')
+      a(href='/register')
+        button(class="show-nav") <h2><i class="fa fa-user"></i></h2> 
+    
+    div(class='col8')
+      a(href='/cart')
+        button(class="show-nav") <h2><i class="fa     fa-shopping-cart"></i></h2> 
+
+
+
+
+div(id="main-category-list") //список категорий товаров на главной странице     
+  
+
+
+
+//      each val2, index2 in cat
+//        cat
+
+div(class='row')
+              
+// выезжающее меню навигации, входит в index.pug
+
+div(class="site-nav button-primary")   
+  div(class='title')
+      h4 <i class="fa fa-list"></i>Категории товаров
+        button(class="close" onclick="showCloseNav()") <p><i class="fa fa-times"></i>Скрыть меню</p>
+      
+      
+      
+        
+  div(id="nav-category-list") //список категорий товаров в меню навигации
+   
+//футер для главной страницы
+
+div(class='rowFMain')
+  h4 бла-бла-бла-бла-бла
+  a(href='/loginAdmin')
+    button(id="adminBtn" class="show-nav") 
+      h2 Admin DEMO
+
+script(src='https://cdn.jsdelivr.net/npm/sweetalert2@10')
+script(src='/js/nav.js')
+script(src='/js/cart.js')
+script(src='/js/slider.js')
+script(src='/js/search.js')      

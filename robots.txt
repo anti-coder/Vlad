@@ -1,0 +1,11 @@
+Host: https://julandre.ru
+Sitemap: 
+User-agent: *
+Disallow: *.js
+Disallow: *.css
+Disallow: *.php
+Disallow: *.ttf
+Disallow: *.jpg 
+Disallow: *.png
+Disallow: /aboutMob.html
+Disallow: /mapMob.html

@@ -1,0 +1,513 @@
+ /* стили основного контейнера слайдера */
+    .slider {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height:  0;  /*установлено экспериментально, что работает в pug и html*/
+      margin: -780px auto auto auto;
+      top: 0px;
+      z-index: 0;
+      flex: auto;
+      background: rgb(76, 76, 76);
+    }
+
+
+    /* стили для обёртки, в которой заключены слайды */
+    .slider__wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* стили для контейнера слайдов */
+    .slider__items {
+      display: flex;
+      transition: transform 1s ease;
+      text-align: center;
+    }
+
+    /* стили для слайдов */
+    .slider__item {
+      flex: 0 0 100%;
+      display: inline-flex;
+      width: 100%; 
+      height: 100%;
+    }
+
+.slider__item h4 {
+  color: white;
+}
+
+ 
+
+    .s2{
+      width: 100%;
+      height: auto;
+      margin: auto 0 auto 0;
+      position: relative;
+      text-align: center;
+      color: white;
+      background: rgb(76, 76, 76);
+    }
+
+    .s2 img {
+      width: 100%;
+      height: auto;
+      margin: -550px auto auto auto;
+      opacity: 0.3;
+      }
+
+
+.rowMain {
+display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 30%;
+    
+  margin: auto auto auto auto;
+  padding: auto 0 auto 0;
+  padding: auto;
+ /* background: red;*/
+}
+
+.centered {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 260px;
+  margin: auto auto auto 25%;
+  position: absolute;
+  top: 500px;
+  text-align: left;
+/*  background: blue;*/
+}
+
+
+.center-right {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: 500px;
+  right: 50px;
+/*  background: pink;*/
+}
+.center-right img {
+  width: 260px;
+  height: auto;
+  margin: auto;
+  opacity: 1;
+}
+
+
+
+/* пульсация*/
+
+.animate-grow {
+  height: 240px;
+  line-height: 240px;
+  /*background: #E41931;*/
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 22px;
+/*  padding: 20px;*/
+  text-align: center;
+  /*color: #FFFFFF;*/
+  padding: 0;
+  animation: animate_grow 2s infinite;
+/*  background: purple;*/
+}
+.animate-grow:hover {
+  animation: none;
+}
+ 
+@keyframes animate_grow {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+
+
+   /* стили для кнопок "вперед" и "назад" */
+    .slider__control {
+      position: absolute;
+      top: 55%;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      color: #fff;
+      text-align: center;
+      opacity: 0.5;
+      height: 50px;
+      padding-top: 0;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+   
+    .slider__control_show {
+      display: flex;
+    }
+
+    .slider__control:hover,
+    .slider__control:focus {
+      color: #fff;
+      text-decoration: none;
+      outline: 0;
+      opacity: 0.9;
+    }
+
+    .slider__control_prev {
+      left: 0;
+    }
+
+    .slider__control_next {
+      right: 0;
+    }
+
+    .slider__control::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: transparent no-repeat center center;
+      background-size: 100% 100%;
+    }
+
+    .slider__control_prev::before {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    }
+
+    .slider__control_next::before {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
+
+
+    .text {
+      position: absolute;
+      right: 0;
+      bottom: 12%;
+      left: 0;
+      z-index: 15;
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+      margin-right: 15%;
+      margin-left: 15%;
+      list-style: none;
+    }
+
+    /* стили для индикаторов */
+    .slider__indicators {
+      position: absolute;
+      right: 0;
+      bottom: 5%;
+      left: 0;
+      z-index: 15;
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+      margin-right: 15%;
+      margin-left: 15%;
+      list-style: none;
+    }
+
+    .slider__indicators li {
+      box-sizing: content-box;
+      flex: 0 1 auto;
+      width: 30px;
+      height: 4px;
+      margin-right: 3px;
+      margin-left: 3px;
+      text-indent: -999px;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.8);
+      background-clip: padding-box;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      }
+
+    .slider__indicators li.active {
+      background-color: rgb(236, 29, 37);
+    }
+
+    /* для стилизации текущего слайдера */
+    .img-fluid {
+      display: inline-flex;
+      height: auto;
+      max-width: 100%;
+    }
+
+
+@media only screen and (max-width: 1600px){
+.slider__control {
+      top: 60%;
+     }
+
+
+
+@media only screen and (max-width: 1400px){
+/*
+.slider {
+      
+      height:  0;  
+      margin: -700px auto auto auto;
+      top: 0px;
+      }
+*/
+.slider__control {
+      top: 65%;
+     }
+ 
+ 
+
+
+@media only screen and (max-width: 1118px){
+
+
+.slider {
+      
+      height:  0;  /*установлено экспериментально, что работает в pug и html*/
+      margin: -1000px auto auto auto;
+      top: 0px;
+      }
+
+
+.s2 img {
+
+      margin: 0 auto auto auto;
+}
+
+
+.centered {
+  height: 250px;
+ 
+  top: 720px;
+ }
+
+.center-right {
+  width: 250px;
+  height: 250px;
+  top: 720px;
+  right: 50px;
+}
+
+.center-right img {
+  width: 250px;
+ }
+
+
+.slider__control {
+      top: 70%;
+    }
+
+.text {
+      bottom: 10%;
+    }
+
+.slider__indicators {
+      bottom: 5%;
+    }
+
+
+}
+
+@media only screen and (max-width: 942px){
+
+.slider {
+      height:  100%;  
+      
+    }
+
+.s2 img {
+      margin: 0 auto auto auto;
+}
+
+.centered {
+  height: 220px;
+ 
+  top: 720px;
+ }
+
+.center-right {
+  width: 220px;
+  height: 220px;
+  top: 720px;
+  right: 50px;
+}
+
+.center-right img {
+  width: 220px;
+ }
+
+.text {
+      bottom: 15%;
+    }
+
+}
+
+
+@media only screen and (max-width: 866px){
+
+
+.center-right {
+  width: 200px;
+  height: 200px;
+  top: 710px;
+  right: 30%;
+}
+
+
+
+
+.centered {
+  width: 70%;
+  height: 200px;
+  margin: auto auto auto 25%;
+  top: 860px;
+ }
+
+.center-right img {
+  width: 200px;
+ }
+
+.slider__control {
+      top: 70%;
+    }
+
+.text {
+      bottom: 10%;
+    }
+
+
+.slider__indicators {
+      bottom: 5%;
+
+
+}
+
+@media only screen and (max-width: 700px){
+
+.slider {
+      height:  100%;  /*установлено экспериментально, что работает в pug и html*/
+      margin: -900px auto auto auto;
+    }
+
+.s2 img {
+      margin: 200 auto auto auto;
+}
+
+
+/* стили для индикаторов */
+    .slider__indicators {
+      bottom: 7%;
+    }
+
+.center-right {
+  width: 200px;
+  height: 200px;
+  margin: -550px auto auto auto;
+  
+  }
+
+.centered {
+  width: 100%;
+  height: 200px;
+  margin: -480px auto auto auto;
+  }
+
+
+.center-right img {
+  width: 200px;
+  } 
+
+.slider__control {
+      top: 50%;
+
+}
+
+.text {
+      bottom: 8%;
+    }
+
+.slider__indicators {
+      bottom: 3%;
+}
+}
+
+@media only screen and (max-width: 580px){
+
+.slider {
+      
+      margin: -810px auto auto auto;
+    }
+
+
+.text {
+      bottom: 10%;
+    }
+
+/* стили для индикаторов */
+    .slider__indicators {
+      bottom: 5%;
+    }
+
+.center-right {
+  width: 180px;
+  height: 180px;
+  margin: -450px auto auto auto;
+  
+  }
+
+.centered {
+  width: 100%;
+  height: 200px;
+  margin: -490px auto auto auto;
+  }
+
+
+.center-right img {
+  width: 180px;
+  }  
+}
+
+@media only screen and (max-width: 530px){
+
+.slider {
+    margin: -80px auto auto auto;
+    }
+
+.text {
+      bottom: 15%;
+    }
+
+/* стили для индикаторов */
+    .slider__indicators {
+      bottom: 8%;
+    }
+
+.center-right {
+  width: 180px;
+  height: 180px;
+  margin: -550px auto auto auto;
+  
+  }
+
+.centered {
+  width: 100%;
+  height: 200px;
+  margin: -590px auto auto auto;
+  }
+
+}
+
